@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://casdrvebktxdr"]
+
+[ext_resource type="Shader" uid="uid://b4m8cvpos1pqh" path="res://shaders/psx/psx_model.gdshader" id="1_14gng"]
+[ext_resource type="Texture2D" uid="uid://v6e8tiunqhrc" path="res://textures/materials/dirt/Ground048_1K-JPG_Color.jpg" id="1_l140w"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_14gng")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_l140w")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.05
+shader_parameter/resolution = Vector2i(320, 240)

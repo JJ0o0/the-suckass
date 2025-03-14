@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bihim2yvifnpn"]
+
+[ext_resource type="Shader" uid="uid://b4m8cvpos1pqh" path="res://shaders/psx/psx_model.gdshader" id="1_bigmj"]
+[ext_resource type="Texture2D" uid="uid://btmjx1xqq1rd5" path="res://textures/materials/plastic/Plastic010_1K-JPG_Color.jpg" id="2_88540"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bigmj")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("2_88540")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)

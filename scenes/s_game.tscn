@@ -1,0 +1,268 @@
+[gd_scene load_steps=15 format=3 uid="uid://re6vdlq84rin"]
+
+[ext_resource type="Script" uid="uid://bg6kvpfjjl1re" path="res://scripts/objects/s_game.gd" id="1_mgket"]
+[ext_resource type="PackedScene" uid="uid://dri8rm4ua256m" path="res://scenes/playable/p_player.tscn" id="2_0xh81"]
+[ext_resource type="AudioStream" uid="uid://dlt1kbgco3fb" path="res://sounds/ambience/Ambiance_Night_Loop_Stereo.wav" id="2_8c6mh"]
+[ext_resource type="PackedScene" uid="uid://bqjyauvayj604" path="res://scenes/maps/m_map_one.tscn" id="2_xgjnx"]
+[ext_resource type="Shader" uid="uid://cjauuwyo7uidq" path="res://shaders/psx/psx_crt.gdshader" id="3_xgjnx"]
+[ext_resource type="Shader" uid="uid://c2he3i4ny3o2q" path="res://shaders/psx/psx_ditter.gdshader" id="4_trqsq"]
+[ext_resource type="FontFile" uid="uid://b0gcltl4vk2ck" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_j5hxy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xh81"]
+shader = ExtResource("3_xgjnx")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.514
+shader_parameter/scanlines_width = 0.303
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(8000, 6000)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.014
+shader_parameter/noise_opacity = 0.112
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.075
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.364
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgket"]
+shader = ExtResource("4_trqsq")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[sub_resource type="Sky" id="Sky_s7g04"]
+
+[sub_resource type="Environment" id="Environment_xgjnx"]
+background_mode = 1
+sky = SubResource("Sky_s7g04")
+ambient_light_source = 2
+ambient_light_color = Color(0.505632, 0.498403, 0.363182, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 3
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0781565, 0.0781564, 0.0781564, 1)
+fog_light_energy = 2.0
+fog_density = 0.1025
+fog_height = 1.5
+fog_height_density = 0.5
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.053
+volumetric_fog_emission = Color(0.0784314, 0.0784314, 0.0784314, 1)
+adjustment_enabled = true
+adjustment_saturation = 0.6
+
+[sub_resource type="Animation" id="Animation_j5hxy"]
+resource_name = "initial_cutscene"
+length = 8.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/dialogue_label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.96667, 3.43333, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.495, 0.495, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/bg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.75, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/dialogue_label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(7.75, 8.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pbd71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/dialogue_label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/bg:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/cutscene_hud/dialogue_label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbd71"]
+_data = {
+&"RESET": SubResource("Animation_pbd71"),
+&"initial_cutscene": SubResource("Animation_j5hxy")
+}
+
+[node name="s_game" type="Node3D"]
+script = ExtResource("1_mgket")
+ambience = ExtResource("2_8c6mh")
+initial_dialogues = Array[String](["Ufa, finalmente cheguei.", "Estou ansioso para ver se a casa é tudo isso."])
+initial_dialogues_duration = Array[float]([3.0, 5.0])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CRT" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_0xh81")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_mgket")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+positional_shadow_atlas_size = 256
+positional_shadow_atlas_quad_0 = 3
+positional_shadow_atlas_quad_1 = 3
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="environment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_xgjnx")
+
+[node name="light" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+sky_mode = 2
+
+[node name="p_player" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_0xh81")]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -27.2559, 1, 30)
+
+[node name="map_one" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_xgjnx")]
+
+[node name="cutscene_hud" type="Control" parent="SubViewportContainer/SubViewport"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="bg" type="ColorRect" parent="SubViewportContainer/SubViewport/cutscene_hud"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="dialogue_label" type="RichTextLabel" parent="SubViewportContainer/SubViewport/cutscene_hud"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = ExtResource("7_j5hxy")
+theme_override_font_sizes/normal_font_size = 10
+text = "18 de Novembro de 1994
+5 dias antes do incidente"
+scroll_active = false
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="custcene_player" type="AnimationPlayer" parent="SubViewportContainer/SubViewport"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_pbd71")
+}
+autoplay = "initial_cutscene"

@@ -1,0 +1,351 @@
+[gd_scene load_steps=41 format=3 uid="uid://dkthnbfvarkr"]
+
+[ext_resource type="PackedScene" uid="uid://dlpxa0ikmgjlq" path="res://models/psx pack/Models/models.fbx" id="1_ouef1"]
+[ext_resource type="Shader" uid="uid://b4m8cvpos1pqh" path="res://shaders/psx/psx_model.gdshader" id="2_3v0h6"]
+[ext_resource type="Texture2D" uid="uid://ci3cdaj2kntlc" path="res://models/psx pack/Texture/Leather.jpg" id="3_hy2ow"]
+[ext_resource type="Texture2D" uid="uid://b3luuqrpx03ur" path="res://models/psx pack/Texture/Fabric.jpg" id="4_4nf0s"]
+[ext_resource type="Texture2D" uid="uid://ca753nktay1av" path="res://models/psx pack/Texture/Metal_05.jpg" id="5_ss5ad"]
+[ext_resource type="Texture2D" uid="uid://b64qv3r2bdnkf" path="res://models/psx pack/Texture/Marmol.png" id="5_x2cqp"]
+[ext_resource type="Texture2D" uid="uid://dy6bxscvew88t" path="res://models/psx pack/Texture/Auto.jpg" id="6_ss5ad"]
+[ext_resource type="Texture2D" uid="uid://h7auyav6at2k" path="res://models/psx pack/Texture/Plastic.jpg" id="7_j17xu"]
+[ext_resource type="Texture2D" uid="uid://bl8ciwikef3fi" path="res://models/psx pack/Texture/Plastic_02.jpg" id="8_i2al1"]
+[ext_resource type="Texture2D" uid="uid://b76rqld0mxew" path="res://models/psx pack/Texture/Tiles.jpg" id="9_4nf0s"]
+[ext_resource type="Texture2D" uid="uid://cnaep1fdcjojb" path="res://models/psx pack/Texture/Fabric_01.jpg" id="9_32wma"]
+[ext_resource type="Texture2D" uid="uid://djwvq4fcsphv1" path="res://models/psx pack/Texture/Wood_05.jpg" id="10_swpyb"]
+[ext_resource type="Texture2D" uid="uid://daxl655lmqo4r" path="res://models/psx pack/Texture/Metal_04.jpg" id="10_x2cqp"]
+[ext_resource type="Texture2D" uid="uid://d10uot7ixhgej" path="res://models/psx pack/Texture/TV_05.jpg" id="11_s3u8o"]
+[ext_resource type="Texture2D" uid="uid://7v8uv3nm25ge" path="res://models/psx pack/Texture/Wood_04.jpg" id="11_ss5ad"]
+[ext_resource type="Texture2D" uid="uid://qt3wd6osccrd" path="res://models/psx pack/Texture/Wood_12.jpg" id="12_c5hab"]
+[ext_resource type="Texture2D" uid="uid://umw0um8by2fe" path="res://models/psx pack/Texture/Wood_02.jpg" id="12_x2cqp"]
+[ext_resource type="Texture2D" uid="uid://dmkcjvj5b4fni" path="res://models/psx pack/Texture/Concrete_01.jpg" id="16_j17xu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32wma"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("11_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j17xu"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_4nf0s")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s3u8o"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swpyb"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("12_x2cqp")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hvmy"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("3_hy2ow")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ni4tu"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("4_4nf0s")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pj574"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_x2cqp")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l416p"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf4ut"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("7_j17xu")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j4wok"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("6_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70v0i"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("8_i2al1")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2al1"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_x2cqp")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss5ad"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("12_x2cqp")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlq1g"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_32wma")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usg8y"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_swpyb")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xofm2"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("10_swpyb")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5hab"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("16_j17xu")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w2slv"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8b87"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("5_ss5ad")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ad34n"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("11_s3u8o")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6rk1u"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("9_32wma")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ivwm"]
+render_priority = 0
+shader = ExtResource("2_3v0h6")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("12_c5hab")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+
+[node name="models" instance=ExtResource("1_ouef1")]
+
+[node name="Cube_081" parent="." index="79"]
+surface_material_override/0 = SubResource("ShaderMaterial_32wma")
+surface_material_override/1 = SubResource("ShaderMaterial_j17xu")
+
+[node name="Cube_082" parent="." index="80"]
+surface_material_override/0 = SubResource("ShaderMaterial_s3u8o")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+surface_material_override/2 = SubResource("ShaderMaterial_swpyb")
+
+[node name="Cube_083" parent="." index="81"]
+surface_material_override/0 = SubResource("ShaderMaterial_s3u8o")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+surface_material_override/2 = SubResource("ShaderMaterial_swpyb")
+
+[node name="Cube_085" parent="." index="82"]
+surface_material_override/0 = SubResource("ShaderMaterial_s3u8o")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+surface_material_override/2 = SubResource("ShaderMaterial_swpyb")
+
+[node name="Cube_086" parent="." index="83"]
+surface_material_override/0 = SubResource("ShaderMaterial_s3u8o")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+surface_material_override/2 = SubResource("ShaderMaterial_swpyb")
+
+[node name="Auto_002" parent="." index="318"]
+surface_material_override/0 = SubResource("ShaderMaterial_6hvmy")
+surface_material_override/1 = SubResource("ShaderMaterial_ni4tu")
+surface_material_override/2 = SubResource("ShaderMaterial_pj574")
+surface_material_override/3 = SubResource("ShaderMaterial_l416p")
+surface_material_override/4 = SubResource("ShaderMaterial_uf4ut")
+
+[node name="Auto_001" parent="Auto_002" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Auto_003" parent="Auto_002" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_pj574")
+surface_material_override/1 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Auto_004" parent="Auto_002" index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_pj574")
+surface_material_override/1 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Auto_005" parent="Auto_002" index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_pj574")
+surface_material_override/1 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Auto_006" parent="Auto_002" index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_pj574")
+surface_material_override/1 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Cylinder_043" parent="Auto_002" index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Cylinder_044" parent="Auto_002" index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Cylinder_046" parent="Auto_002" index="7"]
+surface_material_override/0 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Cylinder_047" parent="Auto_002" index="8"]
+surface_material_override/0 = SubResource("ShaderMaterial_j4wok")
+
+[node name="Cylinder_050" parent="Auto_002" index="9"]
+surface_material_override/0 = SubResource("ShaderMaterial_6hvmy")
+surface_material_override/1 = SubResource("ShaderMaterial_ni4tu")
+
+[node name="Cylinder_052" parent="Auto_002" index="10"]
+surface_material_override/0 = SubResource("ShaderMaterial_ni4tu")
+surface_material_override/1 = SubResource("ShaderMaterial_70v0i")
+
+[node name="Torus_002" parent="Auto_002" index="11"]
+surface_material_override/0 = SubResource("ShaderMaterial_70v0i")
+
+[node name="Cube_217" parent="." index="346"]
+surface_material_override/0 = SubResource("ShaderMaterial_j17xu")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_216" parent="." index="347"]
+surface_material_override/0 = SubResource("ShaderMaterial_swpyb")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_215" parent="." index="348"]
+surface_material_override/0 = SubResource("ShaderMaterial_swpyb")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_214" parent="." index="349"]
+surface_material_override/0 = SubResource("ShaderMaterial_j17xu")
+surface_material_override/1 = SubResource("ShaderMaterial_i2al1")
+surface_material_override/2 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_213" parent="." index="350"]
+surface_material_override/0 = SubResource("ShaderMaterial_ss5ad")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_212" parent="." index="351"]
+surface_material_override/0 = SubResource("ShaderMaterial_swpyb")
+surface_material_override/1 = SubResource("ShaderMaterial_32wma")
+
+[node name="Cube_205" parent="." index="358"]
+surface_material_override/0 = SubResource("ShaderMaterial_tlq1g")
+
+[node name="Cube_203" parent="." index="360"]
+surface_material_override/0 = SubResource("ShaderMaterial_tlq1g")
+
+[node name="Cube_202" parent="." index="361"]
+surface_material_override/0 = SubResource("ShaderMaterial_tlq1g")
+
+[node name="Cube_200" parent="." index="363"]
+surface_material_override/0 = SubResource("ShaderMaterial_usg8y")
+
+[node name="Cube_199" parent="." index="364"]
+surface_material_override/0 = SubResource("ShaderMaterial_xofm2")
+
+[node name="Cylinder_032" parent="." index="404"]
+surface_material_override/0 = SubResource("ShaderMaterial_c5hab")
+surface_material_override/1 = SubResource("ShaderMaterial_w2slv")
+
+[node name="Cylinder_033" parent="." index="405"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3.12694, 10.7686, -9.59443)
+surface_material_override/0 = SubResource("ShaderMaterial_o8b87")
+
+[node name="Cube_173" parent="." index="439"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -27.0711, -1.80442, 7.41724)
+
+[node name="Cube_174" parent="." index="440"]
+surface_material_override/0 = SubResource("ShaderMaterial_ad34n")
+
+[node name="Cube_225" parent="." index="453"]
+surface_material_override/0 = SubResource("ShaderMaterial_6rk1u")
+surface_material_override/1 = SubResource("ShaderMaterial_3ivwm")

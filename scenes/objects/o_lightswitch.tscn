@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://byefixxqfuwxv"]
+
+[ext_resource type="Script" uid="uid://dt76nb8ejojsw" path="res://scripts/objects/o_lightswitch.gd" id="1_qpvq6"]
+[ext_resource type="AudioStream" uid="uid://5isrkkox5bra" path="res://sounds/light/lightswitch.wav" id="2_ub7ie"]
+[ext_resource type="Material" uid="uid://bihim2yvifnpn" path="res://materials/plastic/plastic.tres" id="2_wpi5g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e2qyn"]
+size = Vector3(0.3, 0.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qpvq6"]
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2qyn"]
+size = Vector3(0.3, 0.5, 0.2)
+
+[sub_resource type="Animation" id="Animation_qpvq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.349066, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e2qyn"]
+resource_name = "switch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.349066, 0, 0), Vector3(0.349066, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_sfx"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpvq6"]
+_data = {
+&"RESET": SubResource("Animation_qpvq6"),
+&"switch": SubResource("Animation_e2qyn")
+}
+
+[node name="o_lightswitch" type="StaticBody3D" groups=["interactable"]]
+script = ExtResource("1_qpvq6")
+audio = ExtResource("2_ub7ie")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_e2qyn")
+surface_material_override/0 = ExtResource("2_wpi5g")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
+mesh = SubResource("BoxMesh_qpvq6")
+surface_material_override/0 = ExtResource("2_wpi5g")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_e2qyn")
+
+[node name="player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qpvq6")
+}

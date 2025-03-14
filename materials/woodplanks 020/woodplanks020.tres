@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cuphkawurc47b"]
+
+[ext_resource type="Texture2D" uid="uid://b052415i5sfej" path="res://textures/materials/woodplanks 020/Planks020_1K-JPG_Color.jpg" id="1_56x1y"]
+[ext_resource type="Shader" uid="uid://b4m8cvpos1pqh" path="res://shaders/psx/psx_model.gdshader" id="1_62j77"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_62j77")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_56x1y")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)

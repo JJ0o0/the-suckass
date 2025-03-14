@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cug8u82ht1qpu"]
+
+[ext_resource type="Texture2D" uid="uid://bf0rft3a83tna" path="res://textures/materials/dirtgrass/Ground037_1K-JPG_Color.jpg" id="1_dp6st"]
+[ext_resource type="Shader" uid="uid://b4m8cvpos1pqh" path="res://shaders/psx/psx_model.gdshader" id="1_uhtfq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uhtfq")
+shader_parameter/affine_mapping = false
+shader_parameter/albedo = ExtResource("1_dp6st")
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.05
+shader_parameter/resolution = Vector2i(320, 240)

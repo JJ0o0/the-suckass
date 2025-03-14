@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmk5ftbh6qadx"]
+
+[ext_resource type="Texture2D" uid="uid://mnrjf1wwjs0q" path="res://addons/kenney_prototype_textures/green/texture_02.png" id="1_63euf"]
+[ext_resource type="Texture2D" uid="uid://crrh55sd71gnn" path="res://addons/kenney_prototype_textures/light/texture_02.png" id="2_60w20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xh81"]
+albedo_texture = ExtResource("1_63euf")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8c6mh"]
+albedo_color = Color(0.608485, 0.189078, 0, 1)
+albedo_texture = ExtResource("2_60w20")
+uv1_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_mgket"]
+left_to_right = 1.0
+size = Vector3(10, 2, 50)
+
+[sub_resource type="PrismMesh" id="PrismMesh_j5hxy"]
+left_to_right = 1.0
+size = Vector3(10, 2, 72.155)
+
+[sub_resource type="PrismMesh" id="PrismMesh_8c6mh"]
+left_to_right = 1.0
+size = Vector3(10, 2, 50)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="ground3" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 10)
+use_collision = true
+size = Vector3(100, 0.1, 10)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground7" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5, 0.015, 2.5)
+use_collision = true
+size = Vector3(9, 0.1, 25)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground4" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0.015, -35.5)
+use_collision = true
+size = Vector3(50, 0.1, 71)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground5" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.965, -29)
+use_collision = true
+size = Vector3(60, 2, 38)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground8" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5, 1.18326, -5)
+use_collision = true
+size = Vector3(9, 2.43652, 10)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground9" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5, 8.965, -44)
+use_collision = true
+size = Vector3(1, 10, 22)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="ground10" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 8.965, -44)
+use_collision = true
+size = Vector3(1, 10, 22)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="ground11" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.5, 8.965, -55)
+use_collision = true
+size = Vector3(1, 10, 36)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="ground12" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.5, 8.965, -33)
+use_collision = true
+size = Vector3(1, 10, 36)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="ground13" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -38.5, 13.965, -43.5)
+use_collision = true
+size = Vector3(1, 23, 36)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="ground6" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2.99601, -45)
+use_collision = true
+size = Vector3(80, 2, 50)
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="ground2" type="CSGBox3D" parent="." groups=["ground_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, -0.0180913, 2.50467)
+use_collision = true
+size = Vector3(100, 0.1, 5)
+material = SubResource("StandardMaterial3D_8c6mh")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 1.01646, -5)
+use_collision = true
+mesh = SubResource("PrismMesh_mgket")
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 3.01646, -15)
+use_collision = true
+mesh = SubResource("PrismMesh_j5hxy")
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15, 1.01646, -45)
+use_collision = true
+mesh = SubResource("PrismMesh_mgket")
+material = SubResource("StandardMaterial3D_0xh81")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 3.01646, -45)
+use_collision = true
+mesh = SubResource("PrismMesh_8c6mh")
+material = SubResource("StandardMaterial3D_0xh81")
