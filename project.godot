@@ -10,10 +10,7 @@ config_version=5
 
 [application]
 
-config/name="The Suckass"
-config/name_localized={
-"pt_BR": "Chupacu"
-}
+config/name="Chupacu"
 config/version="0.1"
 run/main_scene="uid://vn8lp8aomxlg"
 config/features=PackedStringArray("4.4", "Forward Plus")
@@ -27,6 +24,7 @@ buses/default_bus_layout="uid://bfeik3n0otdht"
 
 [autoload]
 
+ConfigManager="*res://scripts/singletons/config_manager.gd"
 PlayerAutoload="*res://addons/adaptive_audio_player/player_autoload.gd"
 GameManager="*res://scripts/singletons/game_manager.gd"
 SoundManager="*res://scripts/singletons/sound_manager.gd"
