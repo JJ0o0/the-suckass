@@ -1,5 +1,8 @@
 extends Node
 
+var main : Node
+var scenes : Array[PackedScene]
+
 var player : CharacterBody3D
 var enemy : CharacterBody3D
 

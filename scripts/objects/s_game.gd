@@ -1,7 +1,6 @@
 extends Node3D
 
-@onready var sub_viewport: SubViewport = $SubViewportContainer/SubViewport
-@onready var custcene_player: AnimationPlayer = $SubViewportContainer/SubViewport/custcene_player
+@onready var cutscene_player: AnimationPlayer = $custcene_player
 
 @export var ambience : AudioStream
 
@@ -17,12 +16,12 @@ func _ready() -> void:
 	# Tocar som ambiente
 	ambient_audio_player = SoundManager._create_sfx("Ambience Night")
 	
-	sub_viewport.add_child(ambient_audio_player)
+	add_child(ambient_audio_player)
 	
 	ambient_audio_player.stream = ambience
 	
 	# Cutscene inicial
-	custcene_player.animation_finished.connect(_on_animation_finished)
+	cutscene_player.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:
 	if not on_cutscene:

@@ -5,15 +5,15 @@ const PATH = "user://settings.ini"
 var file = ConfigFile.new()
 
 var defaults = {
-	"Video": {
-		"Quality" : "High",
-		"Fullscreen" : true,
-		"Vsync" : false
+	"video": {
+		"view_fps" : false,
+		"fullscreen" : true,
+		"vsync" : true
 	},
-	"Audio": {
-		"MasterVolume" : 100,
-		"MusicVolume" : 100,
-		"SFXVolume" : 100
+	"audio": {
+		"master_volume" : 10,
+		"music_volume" : 10,
+		"sfx_volume" : 10
 	}
 }
 
@@ -25,30 +25,16 @@ func _ready() -> void:
 				file.set_value(s, k, dic[k])
 		
 		file.save(PATH)
+	else:
+		file.load(PATH)
 
 func _save(section : String, setting_name : String, value) -> void:
-	if section != "Video" or section != "Audio":
-		return
-	
 	file.set_value(section, setting_name, value)
 	file.save(PATH)
 
-func _load(section : String) -> Dictionary:
-	if section != "Video" or section != "Audio":
-		return {}
+func _load(section : String):
+	var sec = {}
+	for key in file.get_section_keys(section):
+		sec[key] = file.get_value(section, key)
 	
-	var s = {}
-	for k in file.get_section_keys(section):
-		s[k] = file.get_value(section, k)
-	
-	return s
-
-func _load_to_default() -> void:
-	file.clear()
-	
-	for s in defaults:
-		var dic = defaults[s] # dick??
-		for k in dic:
-			file.set_value(s, k, dic[k])
-		
-		file.save(PATH)
+	return sec

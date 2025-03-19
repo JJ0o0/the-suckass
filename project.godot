@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Chupacu"
 config/version="0.1"
-run/main_scene="uid://vn8lp8aomxlg"
+run/main_scene="uid://dvp5b6g6w0ln0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false

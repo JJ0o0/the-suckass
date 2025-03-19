@@ -1,5 +1,6 @@
 extends Control
 
+@onready var fps_label: Label = $fps_label
 @onready var interaction_label: Label = $interaction_label
 @onready var collection_label: Label = $collection_label
 @onready var dialogue_label: RichTextLabel = $dialogue_label
@@ -17,7 +18,12 @@ var can_play : bool = true
 var ended_line : bool = false
 var audio_player : AudioStreamPlayer
 
+var view_fps : bool
+
 func _ready() -> void:
+	var video_settings = ConfigManager._load("video")
+	view_fps = video_settings.view_fps 
+	
 	GameManager.hud = self
 	
 	audio_player = SoundManager._create_sfx("HUD")
@@ -26,6 +32,13 @@ func _ready() -> void:
 	_change_collection_text()
 
 func _process(delta: float) -> void:
+	if view_fps:
+		fps_label.show()
+		
+		fps_label.set_text("FPS: " + str(Engine.get_frames_per_second()))
+	else:
+		fps_label.hide()
+	
 	if GameManager.dialogue_mode:
 		_toggle_label(0.0, delta)
 		

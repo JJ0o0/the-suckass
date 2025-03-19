@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dn6ewxxga5il0"]
+[gd_scene load_steps=24 format=3 uid="uid://dn6ewxxga5il0"]
 
 [ext_resource type="FontFile" uid="uid://b0gcltl4vk2ck" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_phjyb"]
 [ext_resource type="Script" uid="uid://cn35elwh4d73s" path="res://scripts/ui/ui_mainmenu.gd" id="2_qu4yp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dlsiqw02lk0q7" path="res://scripts/ui/ui_titlescreen.gd" id="4_mqw5b"]
 [ext_resource type="Script" uid="uid://ikroeqe7o422" path="res://scripts/ui/ui_optionsscreen.gd" id="5_g3d8o"]
 [ext_resource type="Script" uid="uid://wuq68wqw4yeo" path="res://scripts/ui/ui_confirmationscreen.gd" id="6_qu4yp"]
+[ext_resource type="Script" uid="uid://ccyt1jfwps2vg" path="res://scripts/ui/ui_creditsscreen.gd" id="7_wrlhi"]
 
 [sub_resource type="Theme" id="Theme_54wli"]
 default_font = ExtResource("1_phjyb")
@@ -74,7 +75,6 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="title" type="VBoxContainer" parent="margin"]
-visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -134,6 +134,26 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
 text = "[ CONFIGURAÇÕES ]"
 alignment = 2
 
+[node name="btnCredits" type="Button" parent="margin/title"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ CRÉDITOS ]"
+alignment = 2
+
 [node name="btnExit" type="Button" parent="margin/title"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -155,7 +175,8 @@ text = "[ SAIR ]"
 alignment = 2
 
 [node name="config" type="VBoxContainer" parent="margin"]
-custom_minimum_size = Vector2(100, 0)
+visible = false
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_constants/separation = 10
@@ -225,26 +246,6 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="btnQuality" type="Button" parent="margin/config/video_settings"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
-text = "[ QUALIDADE: ALTA ]"
-alignment = 2
-
 [node name="btnFullscreen" type="Button" parent="margin/config/video_settings"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -283,6 +284,26 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
 text = "[ VSYNC: LIGADO ]"
+alignment = 2
+
+[node name="btnViewFPS" type="Button" parent="margin/config/video_settings"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ VER FPS: DESLIGADO ]"
 alignment = 2
 
 [node name="audio_settings" type="VBoxContainer" parent="margin/config"]
@@ -471,14 +492,107 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
 text = "[ NÃO ]"
 alignment = 2
 
+[node name="credits_screen" type="PanelContainer" parent="margin"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eaqtf")
+script = ExtResource("7_wrlhi")
+
+[node name="panel" type="PanelContainer" parent="margin/credits_screen"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_wtpee")
+
+[node name="MarginContainer" type="MarginContainer" parent="margin/credits_screen/panel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin/credits_screen/panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="lblTitle" type="Label" parent="margin/credits_screen/panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 9
+text = "[ CRÉDITOS ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblcredits" type="RichTextLabel" parent="margin/credits_screen/panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("1_phjyb")
+theme_override_font_sizes/normal_font_size = 7
+theme_override_font_sizes/bold_font_size = 8
+bbcode_enabled = true
+text = "feito por [b][color=teal]J0o0ll[/color][/b]
+músicas feitas por [color=slategray][b]TheRealSwirls[/b][/color]
+texturas feitas por [b][color=blue]AmbientCG[/color][/b]
+modelos pegos do pacote retrô de [b][color=red]Miziziziz[/color][/b]
+mapas feitos por[color=teal][b] J0o0l[/b]l[/color]
+
+TUDO USADO E NÃO CREDITADO ESTÁ SOB LICENSA CC0"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnBack" type="Button" parent="margin/credits_screen/panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 7
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ VOLTAR ]"
+alignment = 2
+
+[node name="animation_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
 [connection signal="pressed" from="margin/title/btnStart" to="margin/title" method="_on_btn_start_pressed"]
 [connection signal="pressed" from="margin/title/btnConfig" to="margin/title" method="_on_btn_config_pressed"]
+[connection signal="pressed" from="margin/title/btnCredits" to="margin/title" method="_on_btn_credits_pressed"]
 [connection signal="pressed" from="margin/title/btnExit" to="margin/title" method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="margin/config/page_control/btnLeft" to="margin/config" method="_on_btn_left_pressed"]
 [connection signal="pressed" from="margin/config/page_control/btnRight" to="margin/config" method="_on_btn_right_pressed"]
-[connection signal="pressed" from="margin/config/video_settings/btnQuality" to="margin/config" method="_on_btn_quality_pressed"]
 [connection signal="pressed" from="margin/config/video_settings/btnFullscreen" to="margin/config" method="_on_btn_fullscreen_pressed"]
 [connection signal="pressed" from="margin/config/video_settings/btnVsync" to="margin/config" method="_on_btn_vsync_pressed"]
+[connection signal="pressed" from="margin/config/video_settings/btnViewFPS" to="margin/config" method="_on_btn_viewfps_pressed"]
+[connection signal="pressed" from="margin/config/audio_settings/btnMasterVolume" to="margin/config" method="_on_btn_master_volume_pressed"]
+[connection signal="pressed" from="margin/config/audio_settings/btnSFXVolume" to="margin/config" method="_on_btn_sfx_volume_pressed"]
+[connection signal="pressed" from="margin/config/audio_settings/btnMusicVolume" to="margin/config" method="_on_btn_music_volume_pressed"]
+[connection signal="pressed" from="margin/config/btnApply" to="margin/config" method="_apply"]
 [connection signal="pressed" from="margin/config/btnBack" to="margin/config" method="_on_btn_back_pressed"]
 [connection signal="pressed" from="margin/confirmation_screen/panel/VBoxContainer/HBoxContainer/btnConfirm" to="margin/confirmation_screen" method="_on_btn_confirm_pressed"]
 [connection signal="pressed" from="margin/confirmation_screen/panel/VBoxContainer/HBoxContainer/btnBack" to="margin/confirmation_screen" method="_on_btn_back_pressed"]
+[connection signal="pressed" from="margin/credits_screen/panel/MarginContainer/btnBack" to="margin/credits_screen" method="_on_btn_back_pressed"]
+[connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]

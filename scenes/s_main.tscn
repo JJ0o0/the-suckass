@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvp5b6g6w0ln0"]
+
+[ext_resource type="Shader" uid="uid://cjauuwyo7uidq" path="res://shaders/psx/psx_crt.gdshader" id="1_43et0"]
+[ext_resource type="Script" uid="uid://b01e0egmfm6t3" path="res://scripts/s_main.gd" id="1_6884g"]
+[ext_resource type="PackedScene" uid="uid://drjwpqtr84fvl" path="res://scenes/s_splashscreen.tscn" id="2_7c167"]
+[ext_resource type="Shader" uid="uid://c2he3i4ny3o2q" path="res://shaders/psx/psx_ditter.gdshader" id="2_6884g"]
+[ext_resource type="PackedScene" uid="uid://vn8lp8aomxlg" path="res://scenes/s_mainmenu.tscn" id="3_g8fks"]
+[ext_resource type="PackedScene" uid="uid://re6vdlq84rin" path="res://scenes/s_game.tscn" id="4_mt2q6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dx18"]
+shader = ExtResource("1_43et0")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.514
+shader_parameter/scanlines_width = 0.303
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(8000, 6000)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.014
+shader_parameter/noise_opacity = 0.112
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.075
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.0
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.364
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4e0ar"]
+shader = ExtResource("2_6884g")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[node name="s_main" type="Node"]
+script = ExtResource("1_6884g")
+scenes = Array[PackedScene]([ExtResource("2_7c167"), ExtResource("3_g8fks"), ExtResource("4_mt2q6")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CRT" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_4dx18")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_4e0ar")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+positional_shadow_atlas_size = 256
+positional_shadow_atlas_quad_0 = 3
+positional_shadow_atlas_quad_1 = 3
+size = Vector2i(320, 240)
+render_target_update_mode = 4

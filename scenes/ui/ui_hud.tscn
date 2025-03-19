@@ -27,6 +27,17 @@ mouse_filter = 2
 script = ExtResource("1_streo")
 crosshairs = Array[Texture]([ExtResource("2_k2n2f"), ExtResource("3_s1bby")])
 
+[node name="fps_label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 71.0
+offset_bottom = 23.0
+text = "fps: 60"
+label_settings = SubResource("LabelSettings_b6fwl")
+vertical_alignment = 1
+uppercase = true
+
 [node name="interaction_label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7

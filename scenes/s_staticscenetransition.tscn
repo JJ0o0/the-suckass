@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://7rj0vlgjavek"]
+
+[ext_resource type="VideoStream" uid="uid://be1vbmiut34w6" path="res://videos/tv_static.ogv" id="1_1w6di"]
+[ext_resource type="Script" uid="uid://2407tk3sw7ed" path="res://scripts/ui/ui_staticscenetransition.gd" id="1_a5v0e"]
+
+[node name="s_staticscenetransition" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_a5v0e")
+
+[node name="video" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_1w6di")
+volume_db = -80.0
+autoplay = true
+expand = true
