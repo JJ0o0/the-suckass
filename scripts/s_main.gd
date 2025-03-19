@@ -1,5 +1,6 @@
 extends Node
 
+const LOADING_SCREEN = preload("res://scenes/ui/ui_loadingscreen.tscn")
 const STATIC_SCENE_TRANSITION = preload("res://scenes/s_staticscenetransition.tscn")
 
 @onready var view: SubViewport = $SubViewportContainer/SubViewport
@@ -90,6 +91,13 @@ func _play_static_scene_transition(scene : PackedScene, duration : float) -> voi
 	
 	_transition_ended = false
 	runned = false
+
+func _to_loading_screen(next_scene_index : int) -> void:
+	var loading_scene = LOADING_SCREEN.instantiate()
+	loading_scene.target_scene_index = next_scene_index
+	view.add_child(loading_scene)
+	
+	curr_scene.queue_free()
 
 func _change_scene(scene : PackedScene) -> void:
 	if curr_scene != null:

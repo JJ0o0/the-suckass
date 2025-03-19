@@ -45,11 +45,13 @@ func _show() -> void:
 func _hide() -> void:
 	init_show = false
 	
+	duration = 15.0 * get_process_delta_time() if not init_show else 0.5 * get_process_delta_time()
+	
 	animate = true
 	state = false
 
 func _on_btn_start_pressed() -> void:
-	pass
+	GameManager.main._to_loading_screen(2)
 
 func _on_btn_config_pressed() -> void:
 	_hide()
