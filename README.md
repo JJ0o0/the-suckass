@@ -13,16 +13,12 @@ Por enquanto eu to sem uma build executável. então você terá que rodar da fo
   git clone https://github.com/JJ0o0/the-suckass.git
 ```
 Depois de clonar o repositório, é só colocar o projeto na Godot.
-## FAQ
+## Requisitos
 
-#### Qual é a versão da Godot que você usa?
+Para abrir o projeto você precisa-rá:
 
-A versão 4.4.
-
-#### Pra que fazer um jogo sobre... isso?
-
-Sei lá, porque não?
-
+- [Godot 4.4](https://godotengine.org/download/)
+- [Blender](https://www.blender.org/download/)
 ## Feedback
 
 Se você tiver algum feedback, preencha o formulário em: https://forms.gle/2bcvL1vjtr9UFwoy9
