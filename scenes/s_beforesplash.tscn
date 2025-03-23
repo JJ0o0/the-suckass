@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0yp4js7bmbb8"]
+
+[ext_resource type="Script" uid="uid://4a4vfyr2r5f7" path="res://scripts/ui/ui_beforesplash.gd" id="1_3f1qx"]
+[ext_resource type="VideoStream" uid="uid://bwutd542jyfjv" path="res://videos/psx_intro.ogv" id="1_mhyvb"]
+
+[node name="s_beforesplash" type="Node"]
+script = ExtResource("1_3f1qx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_right = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_mhyvb")
+autoplay = true
+expand = true
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="finished" from="Control/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

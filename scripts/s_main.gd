@@ -2,12 +2,14 @@ extends Node
 
 const LOADING_SCREEN = preload("res://scenes/ui/ui_loadingscreen.tscn")
 const STATIC_SCENE_TRANSITION = preload("res://scenes/s_staticscenetransition.tscn")
+const UI_PAUSE_MENU = preload("res://scenes/ui/ui_pause_menu.tscn")
 
+@onready var s_beforesplash: Node = $SubViewportContainer/SubViewport/s_beforesplash
 @onready var view: SubViewport = $SubViewportContainer/SubViewport
-
 @export var scenes : Array[PackedScene]
 
 var curr_scene : Node = null
+var pause_menu : Node = null
 var waiting_to_load : PackedScene = null
 var transition_scene : Node = null
 
@@ -20,7 +22,7 @@ func _ready() -> void:
 	GameManager.main = self
 	GameManager.scenes = scenes
 	
-	_change_scene(scenes[0])
+	curr_scene = s_beforesplash
 
 func _process(_delta: float) -> void:
 	if runned:
@@ -93,15 +95,30 @@ func _play_static_scene_transition(scene : PackedScene, duration : float) -> voi
 	runned = false
 
 func _to_loading_screen(next_scene_index : int) -> void:
+	SoundManager._update_list()
+	
 	var loading_scene = LOADING_SCREEN.instantiate()
 	loading_scene.target_scene_index = next_scene_index
 	view.add_child(loading_scene)
 	
 	curr_scene.queue_free()
 
+func _add_pause_menu() -> void:
+	pause_menu = UI_PAUSE_MENU.instantiate()
+	$CanvasLayer.add_child(pause_menu)
+
+func _remove_pause_menu() -> void:
+	if pause_menu == null:
+		return
+	
+	pause_menu.queue_free()
+	pause_menu = null
+
 func _change_scene(scene : PackedScene) -> void:
 	if curr_scene != null:
 		curr_scene.queue_free()
+		
+		SoundManager._update_list()
 	
 	var ins = scene.instantiate()
 	

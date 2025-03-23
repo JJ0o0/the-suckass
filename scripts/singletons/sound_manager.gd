@@ -1,6 +1,7 @@
 extends Node
 
 var audio_players : Array = []
+var playback_positions : Array = []
 
 func _create_sfx(name : String) -> AudioStreamPlayer:
 	var audio : AudioStreamPlayer = AudioStreamPlayer.new()
@@ -31,14 +32,17 @@ func _create_3d_sfx(name : String) -> AdaptiveAudioPlayer:
 	
 	return audio
 
-func _remove_audio_player(player) -> void:
-	player.stop()
-	
-	audio_players.erase(player)
-
 func _stop_all_audio_players() -> void:
 	for audio_player in audio_players:
-		_remove_audio_player(audio_player)
+		if audio_player == null:
+			return
+		
+		audio_player.stop()
+
+func _update_list() -> void:
+	for audio_player in audio_players:
+		if audio_player == null:
+			audio_players.erase(audio_player)
 
 func _change_volume(audio_bus : StringName, volume) -> void:
 	var index = AudioServer.get_bus_index(audio_bus)

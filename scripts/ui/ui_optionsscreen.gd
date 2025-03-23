@@ -138,9 +138,9 @@ func _apply() -> void:
 	)
 	#endregion
 	
-	SoundManager._change_volume("Master", curr_master_volume / 10)
-	SoundManager._change_volume("SFX", curr_sfx_volume / 10)
-	SoundManager._change_volume("Music", curr_music_volume / 10)
+	SoundManager._change_volume(&"Master", curr_master_volume / 10)
+	SoundManager._change_volume(&"SFX", curr_sfx_volume / 10)
+	SoundManager._change_volume(&"Music", curr_music_volume / 10)
 	
 	ConfigManager._save("video", "fullscreen", fullscreen_enabled)
 	ConfigManager._save("video", "vsync", vsync_enabled)

@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@export var exit_to_menu = false
+
 var animate : bool = false
 
 var state : bool = false
@@ -27,7 +29,10 @@ func _show() -> void:
 	%animation_timer.wait_time = duration
 	%animation_timer.start()
 	
-	$"../.."._disable_all_buttons()
+	if exit_to_menu:
+		$".."._disable_all_buttons()
+	else:
+		$"../.."._disable_all_buttons()
 	
 	animate = true
 	state = true
@@ -37,6 +42,14 @@ func _hide() -> void:
 	state = false
 
 func _on_btn_confirm_pressed() -> void:
+	if exit_to_menu:
+		get_tree().paused = false
+		
+		GameManager.main._remove_pause_menu()
+		GameManager.main._to_loading_screen(1)
+		
+		return
+	
 	get_tree().quit()
 
 func _on_btn_back_pressed() -> void:

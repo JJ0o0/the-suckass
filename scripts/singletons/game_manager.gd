@@ -10,6 +10,7 @@ var dialogue_obj : Node3D
 
 var hud : Control
 
+var click_sound : AudioStream = preload("res://addons/kenney_ui_audio/click4.wav")
 var dialogue_audios : Dictionary[String, Array] = {
 	"narrator" : [
 		preload("res://sounds/voices/narrator/key (1).wav"), 
@@ -37,3 +38,12 @@ var dialogue_writing : bool = false
 var dialogue_mode_move_camera : bool = true
 var last_dialogue : bool = true
 var debug_mode : bool = false
+
+# https://forum.godotengine.org/t/how-to-get-all-children-from-a-node/18587/3
+func _get_all_children(node : Node, arr:=[]):
+	arr.push_back(node)
+	
+	for child in node.get_children():
+		arr = _get_all_children(child,arr)
+	
+	return arr

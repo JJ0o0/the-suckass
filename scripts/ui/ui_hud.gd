@@ -1,10 +1,9 @@
 extends Control
 
-@onready var fps_label: Label = $fps_label
-@onready var interaction_label: Label = $interaction_label
-@onready var collection_label: Label = $collection_label
-@onready var dialogue_label: RichTextLabel = $dialogue_label
-@onready var crosshair: TextureRect = $crosshair
+@onready var fps_label: Label = $hud/fps_label
+@onready var interaction_label: Label = $hud/interaction_label
+@onready var dialogue_label: RichTextLabel = $hud/dialogue_label
+@onready var crosshair: TextureRect = $hud/crosshair
 
 @onready var dialogue_step: Timer = $dialogue_step
 
@@ -25,11 +24,10 @@ func _ready() -> void:
 	view_fps = video_settings.view_fps 
 	
 	GameManager.hud = self
+	GameManager.main._add_pause_menu()
 	
 	audio_player = SoundManager._create_sfx("HUD")
 	add_child(audio_player)
-	
-	_change_collection_text()
 
 func _process(delta: float) -> void:
 	if view_fps:
@@ -76,9 +74,6 @@ func _change_interaction_text(txt : String) -> void:
 		return
 	
 	interaction_label.text = "[ " + txt + " ]"
-
-func _change_collection_text() -> void:
-	collection_label.text = str(GameManager.collected.size()) + " / " + str(GameManager.collectables.size())
 
 func _typewrite() -> void:
 	GameManager.dialogue_writing = true

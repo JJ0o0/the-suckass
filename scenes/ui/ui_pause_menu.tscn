@@ -1,0 +1,261 @@
+[gd_scene load_steps=32 format=3 uid="uid://bdlep10wxjhs1"]
+
+[ext_resource type="Script" uid="uid://dc8nejrji2e12" path="res://scripts/ui/ui_pausemenu.gd" id="1_rygc7"]
+[ext_resource type="FontFile" uid="uid://b0gcltl4vk2ck" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_hdjvb"]
+[ext_resource type="Script" uid="uid://wuq68wqw4yeo" path="res://scripts/ui/ui_confirmationscreen.gd" id="3_hdjvb"]
+
+[sub_resource type="Theme" id="Theme_hdjvb"]
+default_font = ExtResource("2_hdjvb")
+default_font_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14h3b"]
+bg_color = Color(0, 0, 0, 0.705882)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gnf5"]
+font = ExtResource("2_hdjvb")
+font_size = 12
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.560784)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14h3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8gnf5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpq4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u7l7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kjrsc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6js5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui2ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ured3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8paul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkxle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlsxy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22c4g"]
+bg_color = Color(0, 0, 0, 0.447059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd5ac"]
+bg_color = Color(0, 0, 0, 0.65098)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_e4oj3"]
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvltj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkl38"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ulvd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rddpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0473d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlmjs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7wke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p25nn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5fux"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7lv5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmirx"]
+
+[node name="pause_menu" type="PanelContainer"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_hdjvb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_14h3b")
+script = ExtResource("1_rygc7")
+
+[node name="pause" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="lblPaused" type="Label" parent="pause"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 0
+text = "[ JOGO PAUSADO ]"
+label_settings = SubResource("LabelSettings_8gnf5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="separator" type="HSeparator" parent="pause"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="btnResume" type="Button" parent="pause"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_fonts/font = ExtResource("2_hdjvb")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_14h3b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8gnf5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wpq4t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4u7l7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjrsc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6js5k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ui2ax")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ured3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8paul")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tkxle")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vlsxy")
+text = "[ RESUMIR ]"
+
+[node name="btnOptions" type="Button" parent="pause"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_fonts/font = ExtResource("2_hdjvb")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_14h3b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8gnf5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wpq4t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4u7l7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjrsc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6js5k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ui2ax")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ured3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8paul")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tkxle")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vlsxy")
+text = "[ CONFIGURAÇÕES ]"
+
+[node name="btnMenu" type="Button" parent="pause"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_fonts/font = ExtResource("2_hdjvb")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_14h3b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8gnf5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wpq4t")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4u7l7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_kjrsc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6js5k")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ui2ax")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ured3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8paul")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tkxle")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vlsxy")
+text = "[ SAIR ]"
+
+[node name="confirmation_screen" type="PanelContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_22c4g")
+script = ExtResource("3_hdjvb")
+exit_to_menu = true
+
+[node name="panel" type="PanelContainer" parent="confirmation_screen"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_fd5ac")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="confirmation_screen/panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="lblExit" type="Label" parent="confirmation_screen/panel/VBoxContainer"]
+layout_mode = 2
+text = "Você realmente que sair?"
+label_settings = SubResource("LabelSettings_e4oj3")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="confirmation_screen/panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="btnConfirm" type="Button" parent="confirmation_screen/panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fvltj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rkl38")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulvd8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rddpm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0473d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xlmjs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m7wke")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_p25nn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5fux")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_q7lv5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hmirx")
+text = "[ SIM ]"
+alignment = 2
+
+[node name="btnBack" type="Button" parent="confirmation_screen/panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fvltj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rkl38")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulvd8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rddpm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0473d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_xlmjs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m7wke")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_p25nn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5fux")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_q7lv5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hmirx")
+text = "[ NÃO ]"
+alignment = 2
+
+[node name="animation_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="pressed" from="pause/btnResume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="pause/btnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="confirmation_screen/panel/VBoxContainer/HBoxContainer/btnConfirm" to="confirmation_screen" method="_on_btn_confirm_pressed"]
+[connection signal="pressed" from="confirmation_screen/panel/VBoxContainer/HBoxContainer/btnBack" to="confirmation_screen" method="_on_btn_back_pressed"]
+[connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]
