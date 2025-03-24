@@ -20,8 +20,8 @@ var audio_player : AudioStreamPlayer
 var view_fps : bool
 
 func _ready() -> void:
-	var video_settings = ConfigManager._load("video")
-	view_fps = video_settings.view_fps 
+	var game_settings = ConfigManager._load("game")
+	view_fps = game_settings.view_fps 
 	
 	GameManager.hud = self
 	GameManager.main._add_pause_menu()

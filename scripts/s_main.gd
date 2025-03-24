@@ -39,15 +39,24 @@ func _process(_delta: float) -> void:
 		runned = true
 
 func _apply_settings() -> void:
+	var g_settings = ConfigManager._load("game")
+	var dialogue_multiplier = g_settings.dialogue_multiplier
+	var view_fps_enabled = g_settings.view_fps
+	var skip_intro_enabled = g_settings.skip_intro
+	
 	var v_settings = ConfigManager._load("video")
+	var curr_mouse_sensivity = v_settings.mouse_sensivity
 	var fullscreen_enabled = v_settings.fullscreen
 	var vsync_enabled = v_settings.vsync
-	var view_fps_enabled = v_settings.view_fps
 	
 	var a_settings = ConfigManager._load("audio")
 	var curr_master_volume = a_settings.master_volume
 	var curr_sfx_volume = a_settings.sfx_volume
 	var curr_music_volume = a_settings.music_volume
+	
+	GameManager.dialogue_multiplier = dialogue_multiplier
+	GameManager.skip_intro = skip_intro_enabled
+	GameManager._change_sensivity(curr_mouse_sensivity)
 	
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN if fullscreen_enabled else DisplayServer.WINDOW_MODE_WINDOWED

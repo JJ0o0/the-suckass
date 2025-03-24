@@ -215,7 +215,7 @@ alignment = 2
 [node name="lblPage" type="Label" parent="margin/config/page_control"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Vídeo"
+text = "Jogo"
 label_settings = SubResource("LabelSettings_eaqtf")
 
 [node name="btnRight" type="Button" parent="margin/config/page_control"]
@@ -240,10 +240,97 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
 text = ">"
 alignment = 2
 
-[node name="video_settings" type="VBoxContainer" parent="margin/config"]
+[node name="game_settings" type="VBoxContainer" parent="margin/config"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/separation = 10
+alignment = 2
+
+[node name="btnDialogueMultiplier" type="Button" parent="margin/config/game_settings"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ VEL. DO DIÁLOGO: 1.0x ]"
+alignment = 2
+
+[node name="btnViewFPS" type="Button" parent="margin/config/game_settings"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ VER FPS: DESLIGADO ]"
+alignment = 2
+
+[node name="btnSkipIntro" type="Button" parent="margin/config/game_settings"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ PULAR INTRO: DESLIGADO ]"
+alignment = 2
+
+[node name="video_settings" type="VBoxContainer" parent="margin/config"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="btnSensivity" type="Button" parent="margin/config/video_settings"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
+text = "[ SENSIBILIDADE: 5 ]"
 alignment = 2
 
 [node name="btnFullscreen" type="Button" parent="margin/config/video_settings"]
@@ -284,26 +371,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
 text = "[ VSYNC: LIGADO ]"
-alignment = 2
-
-[node name="btnViewFPS" type="Button" parent="margin/config/video_settings"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wtpee")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kcf4t")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_cqksk")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u7ook")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_h1glj")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hackm")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_t4ox5")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vigaf")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_22184")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vmv1s")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_eaqtf")
-text = "[ VER FPS: DESLIGADO ]"
 alignment = 2
 
 [node name="audio_settings" type="VBoxContainer" parent="margin/config"]
@@ -584,9 +651,12 @@ one_shot = true
 [connection signal="pressed" from="margin/title/btnExit" to="margin/title" method="_on_btn_exit_pressed"]
 [connection signal="pressed" from="margin/config/page_control/btnLeft" to="margin/config" method="_on_btn_left_pressed"]
 [connection signal="pressed" from="margin/config/page_control/btnRight" to="margin/config" method="_on_btn_right_pressed"]
+[connection signal="pressed" from="margin/config/game_settings/btnDialogueMultiplier" to="margin/config" method="_on_btn_dialogue_multiplier_pressed"]
+[connection signal="pressed" from="margin/config/game_settings/btnViewFPS" to="margin/config" method="_on_btn_view_fps_pressed"]
+[connection signal="pressed" from="margin/config/game_settings/btnSkipIntro" to="margin/config" method="_on_btn_skip_intro_pressed"]
+[connection signal="pressed" from="margin/config/video_settings/btnSensivity" to="margin/config" method="_on_btn_sensivity_pressed"]
 [connection signal="pressed" from="margin/config/video_settings/btnFullscreen" to="margin/config" method="_on_btn_fullscreen_pressed"]
 [connection signal="pressed" from="margin/config/video_settings/btnVsync" to="margin/config" method="_on_btn_vsync_pressed"]
-[connection signal="pressed" from="margin/config/video_settings/btnViewFPS" to="margin/config" method="_on_btn_viewfps_pressed"]
 [connection signal="pressed" from="margin/config/audio_settings/btnMasterVolume" to="margin/config" method="_on_btn_master_volume_pressed"]
 [connection signal="pressed" from="margin/config/audio_settings/btnSFXVolume" to="margin/config" method="_on_btn_sfx_volume_pressed"]
 [connection signal="pressed" from="margin/config/audio_settings/btnMusicVolume" to="margin/config" method="_on_btn_music_volume_pressed"]

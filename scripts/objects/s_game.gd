@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	
 	GameManager.last_dialogue = (i == initial_dialogues.size() - 1)
 	GameManager.dialogue = initial_dialogues[i]
-	GameManager.dialogue_duration = initial_dialogues_duration[i]
+	GameManager._change_dialogue_duration(initial_dialogues_duration[i])
 	
 	if not GameManager.last_dialogue:
 		i += 1

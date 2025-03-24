@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bqjyauvayj604" path="res://scenes/maps/m_map_one.tscn" id="2_xgjnx"]
 [ext_resource type="FontFile" uid="uid://b0gcltl4vk2ck" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_j5hxy"]
 
-[sub_resource type="Sky" id="Sky_s7g04"]
+[sub_resource type="Sky" id="Sky_mgket"]
 
 [sub_resource type="Environment" id="Environment_xgjnx"]
 background_mode = 1
-sky = SubResource("Sky_s7g04")
+sky = SubResource("Sky_mgket")
 ambient_light_source = 2
 ambient_light_color = Color(0.505632, 0.498403, 0.363182, 1)
 ambient_light_energy = 0.5

@@ -1,5 +1,7 @@
 extends PanelContainer
 
+@onready var pause: VBoxContainer = $pause
+@onready var config: VBoxContainer = $config
 @onready var confirmation_screen: PanelContainer = $confirmation_screen
 
 var duration : float
@@ -89,3 +91,7 @@ func _on_animation_timer_timeout() -> void:
 	for i in GameManager._get_all_children(self):
 		if i is Button:
 			i.disabled = false
+
+func _on_btn_options_pressed() -> void:
+	pause._hide()
+	config._show()

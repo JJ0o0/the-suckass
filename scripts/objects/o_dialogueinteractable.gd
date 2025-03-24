@@ -12,6 +12,7 @@ func _interact() -> void:
 	GameManager.dialogue_obj = self
 	GameManager.dialogue_subject = subject
 	GameManager.dialogue_mode = true
-	GameManager.dialogue_duration = duration
+	
+	GameManager._change_dialogue_duration(duration)
 	
 	GameManager.hud._typewrite()

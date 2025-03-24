@@ -21,7 +21,8 @@ func _show(body : Node3D) -> void:
 	GameManager.dialogue_obj = target_obj
 	GameManager.dialogue_subject = subject
 	GameManager.dialogue_mode = true
-	GameManager.dialogue_duration = duration
+	
+	GameManager._change_dialogue_duration(duration)
 	
 	GameManager.hud._typewrite()
 	

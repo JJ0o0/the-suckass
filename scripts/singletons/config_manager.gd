@@ -5,8 +5,13 @@ const PATH = "user://settings.ini"
 var file = ConfigFile.new()
 
 var defaults = {
-	"video": {
+	"game": {
+		"dialogue_multiplier" : 1.0,
 		"view_fps" : false,
+		"skip_intro" : false
+	},
+	"video": {
+		"mouse_sensivity": 5.0,
 		"fullscreen" : true,
 		"vsync" : true
 	},

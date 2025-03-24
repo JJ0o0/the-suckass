@@ -9,7 +9,6 @@ extends CharacterBody3D
 @export var amplitude : float = 0.05
 @export var frequency : float = 2.0
 
-var sensivity : float
 var bob_time : float
 
 var input_direction : Vector2
@@ -22,8 +21,6 @@ func _ready() -> void:
 	GameManager.player = self
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	sensivity = Sensivity / 1000
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not can_look:
@@ -61,8 +58,8 @@ func _look(event : InputEvent) -> void:
 		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 			return
 		
-		rotate_y(-event.relative.x * sensivity)
-		head.rotate_x(-event.relative.y * sensivity)
+		rotate_y(-event.relative.x * GameManager.mouse_sensivity)
+		head.rotate_x(-event.relative.y * GameManager.mouse_sensivity)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 func _headbob(delta : float) -> void:
 	bob_time += delta * velocity.length() * int(is_on_floor())

@@ -28,7 +28,9 @@ var dialogue_audios : Dictionary[String, Array] = {
 var collectables : Array = []
 var collected : Array = []
 
+var mouse_sensivity : float
 var dialogue_duration : float
+var dialogue_multiplier : float
 
 var dialogue : String
 var dialogue_subject : String
@@ -38,6 +40,13 @@ var dialogue_writing : bool = false
 var dialogue_mode_move_camera : bool = true
 var last_dialogue : bool = true
 var debug_mode : bool = false
+var skip_intro : bool = false
+
+func _change_dialogue_duration(target : float) -> void:
+	dialogue_duration = target / dialogue_multiplier
+
+func _change_sensivity(target : float) -> void:
+	mouse_sensivity = target / 1000
 
 # https://forum.godotengine.org/t/how-to-get-all-children-from-a-node/18587/3
 func _get_all_children(node : Node, arr:=[]):

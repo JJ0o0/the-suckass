@@ -1,7 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://bdlep10wxjhs1"]
+[gd_scene load_steps=57 format=3 uid="uid://bdlep10wxjhs1"]
 
 [ext_resource type="Script" uid="uid://dc8nejrji2e12" path="res://scripts/ui/ui_pausemenu.gd" id="1_rygc7"]
 [ext_resource type="FontFile" uid="uid://b0gcltl4vk2ck" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_hdjvb"]
+[ext_resource type="Script" uid="uid://ikroeqe7o422" path="res://scripts/ui/ui_optionsscreen.gd" id="3_22c4g"]
+[ext_resource type="Script" uid="uid://dxvh31gs60qnt" path="res://scripts/ui/ui_pause.gd" id="3_fd5ac"]
 [ext_resource type="Script" uid="uid://wuq68wqw4yeo" path="res://scripts/ui/ui_confirmationscreen.gd" id="3_hdjvb"]
 
 [sub_resource type="Theme" id="Theme_hdjvb"]
@@ -40,6 +42,54 @@ shadow_color = Color(0, 0, 0, 0.560784)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkxle"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlsxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd5ac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4oj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xcm3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7wya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1mja"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyxuv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlgn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmhfa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcr4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kkq31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1a46"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l87n2"]
+font_size = 8
+font_color = Color(0.811765, 0.811765, 0.811765, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l87n2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vm5uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffxpm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w7ff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plqsm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lqli8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sess6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mrqc8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu3b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trndt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3owm0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22c4g"]
 bg_color = Color(0, 0, 0, 0.447059)
@@ -95,6 +145,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 alignment = 1
+script = ExtResource("3_fd5ac")
 
 [node name="lblPaused" type="Label" parent="pause"]
 layout_mode = 2
@@ -173,6 +224,321 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8paul")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tkxle")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vlsxy")
 text = "[ SAIR ]"
+
+[node name="config" type="VBoxContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("3_22c4g")
+on_main_menu = false
+
+[node name="page_control" type="HBoxContainer" parent="config"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="btnLeft" type="Button" parent="config/page_control"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "<"
+alignment = 2
+
+[node name="lblPage" type="Label" parent="config/page_control"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Jogo"
+label_settings = SubResource("LabelSettings_l87n2")
+
+[node name="btnRight" type="Button" parent="config/page_control"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = ">"
+alignment = 2
+
+[node name="game_settings" type="VBoxContainer" parent="config"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="btnDialogueMultiplier" type="Button" parent="config/game_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VEL. DO DIÁLOGO: 1.0x ]"
+
+[node name="btnViewFPS" type="Button" parent="config/game_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VER FPS: DESLIGADO ]"
+
+[node name="btnSkipIntro" type="Button" parent="config/game_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ PULAR INTRO: DESLIGADO ]"
+
+[node name="video_settings" type="VBoxContainer" parent="config"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="btnSensivity" type="Button" parent="config/video_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l87n2")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_vm5uy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ffxpm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2w7ff")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_plqsm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lqli8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sess6")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_mrqc8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fu3b6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_trndt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3owm0")
+text = "[ SENSIBILIDADE: 5 ]"
+
+[node name="btnFullscreen" type="Button" parent="config/video_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ TELA CHEIA: LIGADO ]"
+
+[node name="btnVsync" type="Button" parent="config/video_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VSYNC: LIGADO ]"
+
+[node name="audio_settings" type="VBoxContainer" parent="config"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="btnMasterVolume" type="Button" parent="config/audio_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VOLUME PRINCIPAL: 10 ]"
+
+[node name="btnSFXVolume" type="Button" parent="config/audio_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VOLUME DE SFX: 10 ]"
+
+[node name="btnMusicVolume" type="Button" parent="config/audio_settings"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VOLUME DA MÚSICA: 10 ]"
+
+[node name="separator" type="HSeparator" parent="config"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="btnApply" type="Button" parent="config"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ APLICAR ]"
+
+[node name="btnBack" type="Button" parent="config"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_focus_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_colors/font_pressed_color = Color(0.811765, 0.811765, 0.811765, 0.717647)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fd5ac")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_e4oj3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xcm3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_c7wya")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w1mja")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pyxuv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xlgn8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tmhfa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jcr4o")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kkq31")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h1a46")
+text = "[ VOLTAR ]"
 
 [node name="confirmation_screen" type="PanelContainer" parent="."]
 visible = false
@@ -255,7 +621,21 @@ unique_name_in_owner = true
 one_shot = true
 
 [connection signal="pressed" from="pause/btnResume" to="." method="_on_btn_resume_pressed"]
+[connection signal="pressed" from="pause/btnOptions" to="." method="_on_btn_options_pressed"]
 [connection signal="pressed" from="pause/btnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="config/page_control/btnLeft" to="config" method="_on_btn_left_pressed"]
+[connection signal="pressed" from="config/page_control/btnRight" to="config" method="_on_btn_right_pressed"]
+[connection signal="pressed" from="config/game_settings/btnDialogueMultiplier" to="config" method="_on_btn_dialogue_multiplier_pressed"]
+[connection signal="pressed" from="config/game_settings/btnViewFPS" to="config" method="_on_btn_view_fps_pressed"]
+[connection signal="pressed" from="config/game_settings/btnSkipIntro" to="config" method="_on_btn_skip_intro_pressed"]
+[connection signal="pressed" from="config/video_settings/btnSensivity" to="config" method="_on_btn_sensivity_pressed"]
+[connection signal="pressed" from="config/video_settings/btnFullscreen" to="config" method="_on_btn_fullscreen_pressed"]
+[connection signal="pressed" from="config/video_settings/btnVsync" to="config" method="_on_btn_vsync_pressed"]
+[connection signal="pressed" from="config/audio_settings/btnMasterVolume" to="config" method="_on_btn_master_volume_pressed"]
+[connection signal="pressed" from="config/audio_settings/btnSFXVolume" to="config" method="_on_btn_sfx_volume_pressed"]
+[connection signal="pressed" from="config/audio_settings/btnMusicVolume" to="config" method="_on_btn_music_volume_pressed"]
+[connection signal="pressed" from="config/btnApply" to="config" method="_apply"]
+[connection signal="pressed" from="config/btnBack" to="config" method="_on_btn_back_pressed"]
 [connection signal="pressed" from="confirmation_screen/panel/VBoxContainer/HBoxContainer/btnConfirm" to="confirmation_screen" method="_on_btn_confirm_pressed"]
 [connection signal="pressed" from="confirmation_screen/panel/VBoxContainer/HBoxContainer/btnBack" to="confirmation_screen" method="_on_btn_back_pressed"]
 [connection signal="timeout" from="animation_timer" to="." method="_on_animation_timer_timeout"]
