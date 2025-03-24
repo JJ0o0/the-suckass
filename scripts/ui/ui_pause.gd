@@ -2,7 +2,7 @@ extends VBoxContainer
 
 var animate : bool = false
 
-var state : bool = true
+var state : bool = false
 
 var duration
 
@@ -29,9 +29,9 @@ func _show() -> void:
 
 	$".."._disable_all_buttons()
 	
-	animate = true
 	state = true
+	animate = true
 
 func _hide() -> void:
-	animate = true
 	state = false
+	animate = true

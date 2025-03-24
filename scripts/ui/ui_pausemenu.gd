@@ -52,6 +52,7 @@ func _pause() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	$pause._show()
 	_show()
 
 func _unpause() -> void:
@@ -59,6 +60,7 @@ func _unpause() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	$pause._hide()
 	_hide()
 
 func _show() -> void:

@@ -55,7 +55,7 @@ func _ready() -> void:
 	curr_sfx_volume = float(a_settings.sfx_volume)
 	curr_music_volume = float(a_settings.music_volume)
 	
-	btn_dialogue_multiplier.set_text("[ VEL. DO DIÁLOGO: %.1fx]" % curr_dialogue_multiplier)
+	btn_dialogue_multiplier.set_text("[ VEL. DO DIÁLOGO: %.1fx ]" % curr_dialogue_multiplier)
 	btn_view_fps.set_text("[ VER FPS: LIGADO ]" if viewfps_enabled else "[ VER FPS: DESLIGADO ]")
 	btn_skip_intro.set_text("[ PULAR INTRO: LIGADO ]" if skipintro_enabled else "[ PULAR INTRO: DESLIGADO ]")
 	
@@ -210,7 +210,7 @@ func _on_btn_view_fps_pressed() -> void:
 func _on_btn_dialogue_multiplier_pressed() -> void:
 	curr_dialogue_multiplier = curr_dialogue_multiplier + 0.2 if curr_dialogue_multiplier < 1.8 else 1.0
 	
-	btn_dialogue_multiplier.set_text("[ VEL. DO DIÁLOGO: %.1fx]" % curr_dialogue_multiplier)
+	btn_dialogue_multiplier.set_text("[ VEL. DO DIÁLOGO: %.1fx ]" % curr_dialogue_multiplier)
 	
 func _on_btn_skip_intro_pressed() -> void:
 	skipintro_enabled = !skipintro_enabled

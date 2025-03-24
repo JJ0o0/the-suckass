@@ -140,6 +140,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_14h3b")
 script = ExtResource("1_rygc7")
 
 [node name="pause" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
